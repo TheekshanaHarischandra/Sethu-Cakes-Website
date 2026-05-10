@@ -138,7 +138,7 @@ function whatsApp(button) {
   const price =
     modalText?.querySelector('.b')?.textContent.trim() || '';
 
-  const phoneNumber = "94766839188";
+  const phoneNumber = "94741421929";
 
   const firstImage =
     modalContent?.querySelector('.slides')?.src || '';
