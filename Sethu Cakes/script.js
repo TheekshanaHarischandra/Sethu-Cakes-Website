@@ -1,155 +1,159 @@
+/* ==========================================================================
+   SETHU CAKES - INTERACTIVE SCRIPT & LOGIC
+   ========================================================================== */
+
+// Fade in on page load
 window.addEventListener("load", () => {
+  document.body.classList.add("fade-in");
+});
+
+// Fade out navigation function
+function fadeAndGo(url) {
+  document.body.classList.remove("fade-in");
+  document.body.classList.add("fade-out");
   setTimeout(() => {
-    document.querySelector(".circle").classList.add("show");
-    document.querySelector(".h1").classList.add("show");
-    document.querySelector(".h3").classList.add("show");
-    document.querySelector(".p").classList.add("show");
-    document.querySelector(".btn").classList.add("show");
-  }, 1000);
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".btn");
-
-  btn.addEventListener("click", () => {
-    // Animate OUT — remove the show class
-    document.querySelector(".circle").classList.remove("show");
-    document.querySelector(".h1").classList.remove("show");
-    document.querySelector(".h3").classList.remove("show");
-    document.querySelector(".p").classList.remove("show");
-    document.querySelector(".btn").classList.remove("show");
-
-    // Wait for animations to complete (match CSS transition: 1.5s)
-    setTimeout(() => {
-      // Open a new page
-      window.open("newpage.html", "_self"); // "_self" = same tab, "_blank" = new tab
-    }, 1500);
-  });
-});
-
-function fadeAndGo(){
-  document.body.classList.add('fade-out');
-  setTimeout(()=>{
-    window.location.href='menu.html';
-  },800);}
-
-   // fade in when page loads
-window.addEventListener('load', () => {
-  document.body.classList.add('fade-in');
-  });
-
-/*function openModal(){
-  document.getElementById('cakeModal').style.display='block';
-  showSlide(currentSlide);
+    window.location.href = url || 'menu.html';
+  }, 500);
 }
 
-function closeModal(){
-  document.getElementById('cakeModal').style.display='none';
-}
-
-window.onclick = function(event) {
-  const modal = document.getElementById('cakeModal');
-  if (event.target === modal) {
-    closeModal();
+// Toggle Navigation Menu on Mobile
+function toggleMenu() {
+  const navMenu = document.querySelector('.nav-menu');
+  if (navMenu) {
+    navMenu.classList.toggle('active');
   }
 }
-*/
-// Hamb buger menu close
 
-//function toggleMenu() {
-//  document.querySelector('.nav-menu').classList.toggle('active');
-//}
-
-// ===== Image Slider Logic =====
- function toggleMenu() {
-      const navMenu = document.querySelector('.nav-menu');
-      navMenu.classList.toggle('active');
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+  const navMenu = document.querySelector('.nav-menu');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (navMenu && hamburger) {
+    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+      navMenu.classList.remove('active');
     }
+  }
+});
 
-    // Optional: Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const navMenu = document.querySelector('.nav-menu');
-      const hamburger = document.querySelector('.hamburger');
-      
-      if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-        navMenu.classList.remove('active');
-      }
-    });
+// Category Filter System
+function filterCategory(category, buttonElement) {
+  // Update active state on filter buttons
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => btn.classList.remove('active'));
+  if (buttonElement) {
+    buttonElement.classList.add('active');
+  }
 
-    // Fade in effect
-    window.addEventListener('load', function() {
-      document.body.classList.add('fade-in');
-    });
-
-let currentSlide = 0;
-
-function openModal(id) {
-  document.getElementById(id).style.display = 'block';
-  showSlide(currentSlide, id);
+  // Filter cake items
+  const menuItems = document.querySelectorAll('.menu-item');
+  menuItems.forEach(item => {
+    const itemCategory = item.getAttribute('data-category');
+    if (category === 'all' || itemCategory === category) {
+      item.classList.remove('hide');
+    } else {
+      item.classList.add('hide');
+    }
+  });
 }
 
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
+// Modal & Gallery Slider Management
+let currentSlideIndex = 0;
+
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+
+  // Close any open modals first
+  closeAllModals();
+
+  modal.classList.add('open');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+  currentSlideIndex = 0;
+  showSlide(currentSlideIndex, modalId);
 }
 
-window.onclick = function(event) {
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('open');
+    modal.style.display = 'none';
+  }
+  document.body.style.overflow = 'auto';
+}
+
+function closeAllModals() {
   const modals = document.querySelectorAll('.modal');
   modals.forEach(modal => {
-    if (event.target === modal) modal.style.display = 'none';
+    modal.classList.remove('open');
+    modal.style.display = 'none';
   });
-};
+  document.body.style.overflow = 'auto';
+}
 
+// Close modal when clicking outside content box or pressing Escape
+window.addEventListener('click', function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target === modal) {
+      closeModal(modal.id);
+    }
+  });
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeAllModals();
+  }
+});
+
+// Gallery Slide Navigation
 function showSlide(index, modalId) {
   const modal = document.getElementById(modalId);
-  const slides = modal.querySelectorAll(".slides");
+  if (!modal) return;
 
+  const slides = modal.querySelectorAll('.slides');
   if (slides.length === 0) return;
 
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
+  if (index >= slides.length) currentSlideIndex = 0;
+  else if (index < 0) currentSlideIndex = slides.length - 1;
+  else currentSlideIndex = index;
 
   slides.forEach((slide, i) => {
-    slide.style.display = i === currentSlide ? 'block' : 'none';
+    slide.style.display = i === currentSlideIndex ? 'block' : 'none';
   });
 }
 
 function nextImage(modalId) {
-  showSlide(currentSlide + 1, modalId);
+  showSlide(currentSlideIndex + 1, modalId);
 }
 
 function prevImage(modalId) {
-  showSlide(currentSlide - 1, modalId);
+  showSlide(currentSlideIndex - 1, modalId);
 }
 
-
-/*whts app connect*/
-
-
-
+// WhatsApp Order Generator (Price-Free)
 function whatsApp(button) {
-  const modalText = button.closest('.modal-text');
-  const modalContent = button.closest('.modal-content');
-
+  const modalContent = button.closest('.modal-content') || button.closest('.modal-text');
+  
   const cakeName =
-    modalText?.querySelector('h3')?.textContent.trim() || 'a cake';
-
-  const price =
-    modalText?.querySelector('.b')?.textContent.trim() || '';
+    modalContent?.querySelector('h3')?.textContent.trim() || 'Custom Cake';
 
   const phoneNumber = "94741421929";
 
   const firstImage =
     modalContent?.querySelector('.slides')?.src || '';
 
-  let message = `Hi! I'm interested in the ${cakeName}.`;
-  if (price) message += `\n${price}`;
-  if (firstImage) message += `\nPhoto: ${firstImage}`;
+  let message = `Hi Sethu Cakes! 👋\nI'm interested in ordering the *${cakeName}*.`;
+  if (firstImage) {
+    message += `\nReference Image: ${firstImage}`;
+  }
+  message += `\nCould you please let me know availability and details?`;
 
   window.open(
     `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
     "_blank"
   );
 }
-
