@@ -1,0 +1,27 @@
+# ==============================================================================
+# SETHU CAKES - SECURITY CONFIGURATION (.htaccess)
+# ==============================================================================
+
+# Disable Directory Browsing / Listing to prevent people from browsing files
+Options -Indexes
+
+# Security Headers
+<IfModule mod_headers.c>
+  # Clickjacking Protection
+  Header always set X-Frame-Options "DENY"
+
+  # Prevent MIME Sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Feature & Permissions Policy
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # Strict Transport Security (HSTS)
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Content Security Policy (CSP)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; object-src 'none'; frame-ancestors 'none'; base-uri 'self';"
+</IfModule>

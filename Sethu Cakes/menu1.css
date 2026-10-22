@@ -2,7 +2,7 @@
    SETHU CAKES - LUXURY MODERN BUSINESS STYLESHEET
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+@import url('fonts.css');
 
 /* CSS Variables / Theme System */
 :root {
@@ -766,6 +766,14 @@ header.f ul.nav-menu li a.active::after {
   height: 340px;
   object-fit: contain;
   border-radius: var(--radius-md);
+}
+
+.slides.active {
+  display: block;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .prev, .next {

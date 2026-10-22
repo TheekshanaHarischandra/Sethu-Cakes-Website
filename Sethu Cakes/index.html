@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sethu Cakes | Artisanal Cake Studio</title>
   <meta name="description" content="Handcrafted delicious custom cakes, birthday cakes, wedding cakes, and bento cakes for every special occasion.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; object-src 'none'; base-uri 'self';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="fade-in">
@@ -22,14 +25,14 @@
         Welcome to Sethu Cakes — where every slice tells a sweet story. We craft custom artisanal cakes with love, premium ingredients, and exquisite design.
       </p>
       <div>
-        <button onclick="fadeAndGo('menu.html')" class="btn-hero">
+        <button class="btn-hero" data-action="fade-nav" data-url="menu.html">
           Explore Our Gallery &rarr;
         </button>
       </div>
     </div>
 
     <div class="landing-image-wrap">
-      <img src="cozy-restaurant-realistic-cake-high-detail_72772-24593.jpg" alt="Artisanal Birthday Cake">
+      <img src="cozy-restaurant-realistic-cake-high-detail_72772-24593.webp" alt="Artisanal Birthday Cake">
     </div>
   </div>
 

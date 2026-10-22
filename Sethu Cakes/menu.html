@@ -5,23 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sethu Cakes | Custom Cake Studio</title>
   <meta name="description" content="Explore our handcrafted custom birthday cakes, wedding cakes, theme cakes, and dessert creations. Order directly via WhatsApp.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; object-src 'none'; base-uri 'self';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="menu1.css">
 </head>
 <body class="fade-in">
 
   <!-- Header Navigation -->
   <header class="f">
-    <h2 class="logo" onclick="window.location.href='#home'">🎂 Sethu Cakes</h2>
+    <h2 class="logo" data-action="nav-home">🎂 Sethu Cakes</h2>
 
     <ul class="nav-menu">
-      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-      <li><a href="#about" onclick="toggleMenu()">About</a></li>
-      <li><a href="#menu" onclick="toggleMenu()">Gallery</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      <li><a href="https://wa.me/94741421929" target="_blank" class="header-cta">Order Now</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://wa.me/94741421929" target="_blank" rel="noopener noreferrer" class="header-cta">Order Now</a></li>
     </ul>
 
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" data-action="toggle-menu">
       <span></span>
       <span></span>
       <span></span>
@@ -45,13 +48,13 @@
           </p>
           <div class="hero-buttons">
             <a href="#menu" class="btn-primary">Browse Gallery &rarr;</a>
-            <a href="https://wa.me/94741421929?text=Hi%20Sethu%20Cakes,%20I'd%20like%20to%20inquire%20about%20a%20custom%20cake." target="_blank" class="btn-secondary">💬 WhatsApp Order</a>
+            <a href="https://wa.me/94741421929?text=Hi%20Sethu%20Cakes,%20I'd%20like%20to%20inquire%20about%20a%20custom%20cake." target="_blank" rel="noopener noreferrer" class="btn-secondary">💬 WhatsApp Order</a>
           </div>
         </div>
 
         <div class="hero-image-side">
           <div class="hero-image-wrapper">
-            <img src="cozy-restaurant-realistic-cake-high-detail_72772-24593.jpg" alt="Featured Custom Cake">
+            <img src="cozy-restaurant-realistic-cake-high-detail_72772-24593.webp" alt="Featured Custom Cake">
           </div>
           <div class="floating-badge">
             <div class="badge-icon">🍰</div>
@@ -131,20 +134,20 @@
 
       <!-- Category Filter Tabs -->
       <div class="category-filter">
-        <button class="filter-btn active" onclick="filterCategory('all', this)">All Designs</button>
-        <button class="filter-btn" onclick="filterCategory('theme', this)">Theme & Novelty</button>
-        <button class="filter-btn" onclick="filterCategory('birthday', this)">Birthday & Celebration</button>
-        <button class="filter-btn" onclick="filterCategory('floral', this)">Floral & Elegance</button>
-        <button class="filter-btn" onclick="filterCategory('speciality', this)">Cupcakes & Speciality</button>
+        <button class="filter-btn active" data-filter="all">All Designs</button>
+        <button class="filter-btn" data-filter="theme">Theme & Novelty</button>
+        <button class="filter-btn" data-filter="birthday">Birthday & Celebration</button>
+        <button class="filter-btn" data-filter="floral">Floral & Elegance</button>
+        <button class="filter-btn" data-filter="speciality">Cupcakes & Speciality</button>
       </div>
 
       <!-- Menu Grid -->
       <div class="menu-grid">
 
         <!-- Cake 1 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal1')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal1">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (47)/bike4.png" alt="Bike Theme Cake">
+            <img src="cake 4tos/New folder (47)/bike4.webp" alt="Bike Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Bike Theme Cake</h3>
@@ -153,27 +156,27 @@
         </div>
         <div id="cakeModal1" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal1')">&times;</span>
+            <span class="close" data-close-modal="cakeModal1">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (47)/bike.jpg" alt="Bike Cake View 1">
-              <img class="slides" src="cake 4tos/New folder (47)/bike2.jpg" alt="Bike Cake View 2">
-              <img class="slides" src="cake 4tos/New folder (47)/bike3.jpg" alt="Bike Cake View 3">
-              <button class="prev" onclick="prevImage('cakeModal1')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal1')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (47)/bike.webp" alt="Bike Cake View 1">
+              <img class="slides" src="cake 4tos/New folder (47)/bike2.webp" alt="Bike Cake View 2">
+              <img class="slides" src="cake 4tos/New folder (47)/bike3.webp" alt="Bike Cake View 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal1">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal1">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Bike Theme Cake</h3>
               <p class="a">Softly baked butter cake decorated with smooth buttercream icing for a birthday celebration.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 2 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal2')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal2">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (48)/doll3.png" alt="Doll Cake">
+            <img src="cake 4tos/New folder (48)/doll3.webp" alt="Doll Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Doll Cake</h3>
@@ -182,27 +185,27 @@
         </div>
         <div id="cakeModal2" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal2')">&times;</span>
+            <span class="close" data-close-modal="cakeModal2">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (48)/doll.jpg" alt="Doll Cake 1">
-              <img class="slides" src="cake 4tos/New folder (48)/doll1.jpg" alt="Doll Cake 2">
-              <img class="slides" src="cake 4tos/New folder (48)/doll2.jpg" alt="Doll Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal2')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal2')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (48)/doll.webp" alt="Doll Cake 1">
+              <img class="slides" src="cake 4tos/New folder (48)/doll1.webp" alt="Doll Cake 2">
+              <img class="slides" src="cake 4tos/New folder (48)/doll2.webp" alt="Doll Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal2">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal2">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Doll Cake</h3>
               <p class="a">Handmade fondant icing doll centerpiece with soft buttercream icing layers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 3 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal3')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal3">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder/WhatsApp_Image_2025-10-23_at_00.02.32_189ddcd5-removebg-preview.png" alt="Round Shape Cake">
+            <img src="cake 4tos/round-cake/WhatsApp_Image_2025-10-23_at_00.02.32_189ddcd5-removebg-preview.webp" alt="Round Shape Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Round Shape Birthday Cake</h3>
@@ -211,27 +214,27 @@
         </div>
         <div id="cakeModal3" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal3')">&times;</span>
+            <span class="close" data-close-modal="cakeModal3">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder/WhatsApp Image 2025-10-23 at 00.02.32_189ddcd5.jpg" alt="Round Cake 1">
-              <img class="slides" src="cake 4tos/New folder/WhatsApp Image 2025-10-23 at 00.02.39_8df46bee.jpg" alt="Round Cake 2">
-              <img class="slides" src="cake 4tos/New folder/WhatsApp Image 2025-10-23 at 00.02.41_5da0167f.jpg" alt="Round Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal3')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal3')">&#10095;</button>
+              <img class="slides" src="cake 4tos/round-cake/WhatsApp Image 2025-10-23 at 00.02.32_189ddcd5.webp" alt="Round Cake 1">
+              <img class="slides" src="cake 4tos/round-cake/WhatsApp Image 2025-10-23 at 00.02.39_8df46bee.webp" alt="Round Cake 2">
+              <img class="slides" src="cake 4tos/round-cake/WhatsApp Image 2025-10-23 at 00.02.41_5da0167f.webp" alt="Round Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal3">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal3">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Round Shape Birthday Cake</h3>
               <p class="a">Delicious butter cake covered and decorated with fresh buttercream icing.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 4 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal4')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal4">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (2)/cake4.png" alt="Red Velvet Cake">
+            <img src="cake 4tos/New folder (2)/cake4.webp" alt="Red Velvet Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Red Velvet Cake</h3>
@@ -240,27 +243,27 @@
         </div>
         <div id="cakeModal4" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal4')">&times;</span>
+            <span class="close" data-close-modal="cakeModal4">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (2)/cake1.jpg" alt="Red Velvet 1">
-              <img class="slides" src="cake 4tos/New folder (2)/cake2.jpg" alt="Red Velvet 2">
-              <img class="slides" src="cake 4tos/New folder (2)/cake3.jpg" alt="Red Velvet 3">
-              <button class="prev" onclick="prevImage('cakeModal4')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal4')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (2)/cake1.webp" alt="Red Velvet 1">
+              <img class="slides" src="cake 4tos/New folder (2)/cake2.webp" alt="Red Velvet 2">
+              <img class="slides" src="cake 4tos/New folder (2)/cake3.webp" alt="Red Velvet 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal4">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal4">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Red Velvet Cake</h3>
               <p class="a">Rich chocolate sponge cake covered with smooth buttercream frosting and custom toppings.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 5 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal5')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal5">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (3)/cake4.png" alt="Chocolate Drip Cake">
+            <img src="cake 4tos/New folder (3)/cake4.webp" alt="Chocolate Drip Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Chocolate Drip Cake</h3>
@@ -269,27 +272,27 @@
         </div>
         <div id="cakeModal5" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal5')">&times;</span>
+            <span class="close" data-close-modal="cakeModal5">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (3)/cake1.jpg" alt="Chocolate Drip 1">
-              <img class="slides" src="cake 4tos/New folder (3)/cake2.jpg" alt="Chocolate Drip 2">
-              <img class="slides" src="cake 4tos/New folder (3)/cake3.jpg" alt="Chocolate Drip 3">
-              <button class="prev" onclick="prevImage('cakeModal5')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal5')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (3)/cake1.webp" alt="Chocolate Drip 1">
+              <img class="slides" src="cake 4tos/New folder (3)/cake2.webp" alt="Chocolate Drip 2">
+              <img class="slides" src="cake 4tos/New folder (3)/cake3.webp" alt="Chocolate Drip 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal5">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal5">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Chocolate Drip Cake</h3>
               <p class="a">Soft chocolate cake covered in buttercream with dark chocolate drip coating.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 6 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal6')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal6">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (4)/cake3.png" alt="Unicorn Cake">
+            <img src="cake 4tos/New folder (4)/cake3.webp" alt="Unicorn Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Unicorn Cake</h3>
@@ -298,26 +301,26 @@
         </div>
         <div id="cakeModal6" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal6')">&times;</span>
+            <span class="close" data-close-modal="cakeModal6">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (4)/cake1.jpg" alt="Unicorn Cake 1">
-              <img class="slides" src="cake 4tos/New folder (4)/cake2.jpg" alt="Unicorn Cake 2">
-              <button class="prev" onclick="prevImage('cakeModal6')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal6')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (4)/cake1.webp" alt="Unicorn Cake 1">
+              <img class="slides" src="cake 4tos/New folder (4)/cake2.webp" alt="Unicorn Cake 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal6">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal6">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Unicorn Cake</h3>
               <p class="a">Butter cake covered with buttercream icing and finished with custom unicorn toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 7 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal7')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal7">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (5)/cake4.png" alt="Kid Cake">
+            <img src="cake 4tos/New folder (5)/cake4.webp" alt="Kid Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Kids Theme Cake</h3>
@@ -326,27 +329,27 @@
         </div>
         <div id="cakeModal7" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal7')">&times;</span>
+            <span class="close" data-close-modal="cakeModal7">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (5)/cake1.jpg" alt="Kid Cake 1">
-              <img class="slides" src="cake 4tos/New folder (5)/cake2.jpg" alt="Kid Cake 2">
-              <img class="slides" src="cake 4tos/New folder (5)/cake3.jpg" alt="Kid Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal7')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal7')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (5)/cake1.webp" alt="Kid Cake 1">
+              <img class="slides" src="cake 4tos/New folder (5)/cake2.webp" alt="Kid Cake 2">
+              <img class="slides" src="cake 4tos/New folder (5)/cake3.webp" alt="Kid Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal7">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal7">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Kids Theme Cake</h3>
               <p class="a">Butter cake covered with fondant icing and featuring handmade fondant figurines.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 8 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal8')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal8">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (6)/cake4.png" alt="Round Shape Cake">
+            <img src="cake 4tos/New folder (6)/cake4.webp" alt="Round Shape Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Classic Round Birthday Cake</h3>
@@ -355,27 +358,27 @@
         </div>
         <div id="cakeModal8" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal8')">&times;</span>
+            <span class="close" data-close-modal="cakeModal8">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (6)/cake1.jpg" alt="Classic Round 1">
-              <img class="slides" src="cake 4tos/New folder (6)/cake2.jpg" alt="Classic Round 2">
-              <img class="slides" src="cake 4tos/New folder (6)/cake3.jpg" alt="Classic Round 3">
-              <button class="prev" onclick="prevImage('cakeModal8')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal8')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (6)/cake1.webp" alt="Classic Round 1">
+              <img class="slides" src="cake 4tos/New folder (6)/cake2.webp" alt="Classic Round 2">
+              <img class="slides" src="cake 4tos/New folder (6)/cake3.webp" alt="Classic Round 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal8">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal8">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Classic Round Birthday Cake</h3>
               <p class="a">Fresh butter cake covered and beautifully decorated with buttercream icing.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 9 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal9')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal9">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (7)/rose3.png" alt="Rose Theme Cake">
+            <img src="cake 4tos/New folder (7)/rose3.webp" alt="Rose Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Round Rose Theme Cake</h3>
@@ -384,26 +387,26 @@
         </div>
         <div id="cakeModal9" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal9')">&times;</span>
+            <span class="close" data-close-modal="cakeModal9">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (7)/rose.jpg" alt="Rose Cake 1">
-              <img class="slides" src="cake 4tos/New folder (7)/rose2.jpg" alt="Rose Cake 2">
-              <button class="prev" onclick="prevImage('cakeModal9')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal9')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (7)/rose.webp" alt="Rose Cake 1">
+              <img class="slides" src="cake 4tos/New folder (7)/rose2.webp" alt="Rose Cake 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal9">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal9">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Round Rose Theme Cake</h3>
               <p class="a">Covered with smooth buttercream icing and decorated with handcrafted fondant roses.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 10 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal10')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal10">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (8)/cake3.png" alt="Japanese Theme Cake">
+            <img src="cake 4tos/New folder (8)/cake3.webp" alt="Japanese Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Japanese Theme Cake</h3>
@@ -412,26 +415,26 @@
         </div>
         <div id="cakeModal10" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal10')">&times;</span>
+            <span class="close" data-close-modal="cakeModal10">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (8)/cake1.jpg" alt="Japanese Cake 1">
-              <img class="slides" src="cake 4tos/New folder (8)/cake2.jpg" alt="Japanese Cake 2">
-              <button class="prev" onclick="prevImage('cakeModal10')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal10')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (8)/cake1.webp" alt="Japanese Cake 1">
+              <img class="slides" src="cake 4tos/New folder (8)/cake2.webp" alt="Japanese Cake 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal10">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal10">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Japanese Theme Cake</h3>
               <p class="a">Covered with buttercream and fondant icing, accented with delicate fresh flowers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 11 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal11')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal11">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (9)/cake4.png" alt="Unicorn Theme Cake">
+            <img src="cake 4tos/New folder (9)/cake4.webp" alt="Unicorn Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Pastel Unicorn Cake</h3>
@@ -440,27 +443,27 @@
         </div>
         <div id="cakeModal11" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal11')">&times;</span>
+            <span class="close" data-close-modal="cakeModal11">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (9)/cake1.jpg" alt="Unicorn Cake 1">
-              <img class="slides" src="cake 4tos/New folder (9)/cake2.jpg" alt="Unicorn Cake 2">
-              <img class="slides" src="cake 4tos/New folder (9)/cake3.jpg" alt="Unicorn Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal11')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal11')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (9)/cake1.webp" alt="Unicorn Cake 1">
+              <img class="slides" src="cake 4tos/New folder (9)/cake2.webp" alt="Unicorn Cake 2">
+              <img class="slides" src="cake 4tos/New folder (9)/cake3.webp" alt="Unicorn Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal11">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal11">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Pastel Unicorn Cake</h3>
               <p class="a">Covered with rich buttercream icing and decorated with pastel toppings.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 12 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal12')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal12">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (10)/cake4.png" alt="Cricket Theme Cake">
+            <img src="cake 4tos/New folder (10)/cake4.webp" alt="Cricket Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Cricket Theme Cake</h3>
@@ -469,27 +472,27 @@
         </div>
         <div id="cakeModal12" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal12')">&times;</span>
+            <span class="close" data-close-modal="cakeModal12">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (10)/cake1.jpg" alt="Cricket Cake 1">
-              <img class="slides" src="cake 4tos/New folder (10)/cake2.jpg" alt="Cricket Cake 2">
-              <img class="slides" src="cake 4tos/New folder (10)/cake3.jpg" alt="Cricket Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal12')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal12')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (10)/cake1.webp" alt="Cricket Cake 1">
+              <img class="slides" src="cake 4tos/New folder (10)/cake2.webp" alt="Cricket Cake 2">
+              <img class="slides" src="cake 4tos/New folder (10)/cake3.webp" alt="Cricket Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal12">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal12">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Cricket Theme Cake</h3>
               <p class="a">Covered with buttercream icing and decorated with handcrafted fondant bat and ball.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 13 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal13')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal13">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (11)/cake4.png" alt="Princess Theme Cake">
+            <img src="cake 4tos/New folder (11)/cake4.webp" alt="Princess Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Princess Theme Cake</h3>
@@ -498,27 +501,27 @@
         </div>
         <div id="cakeModal13" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal13')">&times;</span>
+            <span class="close" data-close-modal="cakeModal13">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (11)/cake1.jpg" alt="Princess Cake 1">
-              <img class="slides" src="cake 4tos/New folder (11)/cake2.jpg" alt="Princess Cake 2">
-              <img class="slides" src="cake 4tos/New folder (11)/cake3.jpg" alt="Princess Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal13')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal13')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (11)/cake1.webp" alt="Princess Cake 1">
+              <img class="slides" src="cake 4tos/New folder (11)/cake2.webp" alt="Princess Cake 2">
+              <img class="slides" src="cake 4tos/New folder (11)/cake3.webp" alt="Princess Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal13">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal13">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Princess Theme Cake</h3>
               <p class="a">Covered with buttercream icing and decorated with elegant princess toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 14 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal14')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal14">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (12)/cake4.png" alt="Kuromi Theme Cake">
+            <img src="cake 4tos/New folder (12)/cake4.webp" alt="Kuromi Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Kuromi Theme Cake</h3>
@@ -527,27 +530,27 @@
         </div>
         <div id="cakeModal14" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal14')">&times;</span>
+            <span class="close" data-close-modal="cakeModal14">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (12)/cake1.jpg" alt="Kuromi Cake 1">
-              <img class="slides" src="cake 4tos/New folder (12)/cake2.jpg" alt="Kuromi Cake 2">
-              <img class="slides" src="cake 4tos/New folder (12)/cake3.jpg" alt="Kuromi Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal14')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal14')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (12)/cake1.webp" alt="Kuromi Cake 1">
+              <img class="slides" src="cake 4tos/New folder (12)/cake2.webp" alt="Kuromi Cake 2">
+              <img class="slides" src="cake 4tos/New folder (12)/cake3.webp" alt="Kuromi Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal14">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal14">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Kuromi Theme Cake</h3>
               <p class="a">Covered with buttercream icing, topped with cute character toppers and deco spheres.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 15 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal15')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal15">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (13)/cake4.png" alt="Spider-Man Theme Cake">
+            <img src="cake 4tos/New folder (13)/cake4.webp" alt="Spider-Man Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Spider-Man Theme Cake</h3>
@@ -556,27 +559,27 @@
         </div>
         <div id="cakeModal15" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal15')">&times;</span>
+            <span class="close" data-close-modal="cakeModal15">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (13)/cake1.jpg" alt="Spider-Man Cake 1">
-              <img class="slides" src="cake 4tos/New folder (13)/cake2.jpg" alt="Spider-Man Cake 2">
-              <img class="slides" src="cake 4tos/New folder (13)/cake3.jpg" alt="Spider-Man Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal15')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal15')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (13)/cake1.webp" alt="Spider-Man Cake 1">
+              <img class="slides" src="cake 4tos/New folder (13)/cake2.webp" alt="Spider-Man Cake 2">
+              <img class="slides" src="cake 4tos/New folder (13)/cake3.webp" alt="Spider-Man Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal15">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal15">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Spider-Man Theme Cake</h3>
               <p class="a">Covered with buttercream icing and featuring a Spider-Man figurine topper.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 16 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal16')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal16">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (14)/cake4.png" alt="Angel Theme Cake">
+            <img src="cake 4tos/New folder (14)/cake4.webp" alt="Angel Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Angel Theme Cake</h3>
@@ -585,27 +588,27 @@
         </div>
         <div id="cakeModal16" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal16')">&times;</span>
+            <span class="close" data-close-modal="cakeModal16">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (14)/cake1.jpg" alt="Angel Cake 1">
-              <img class="slides" src="cake 4tos/New folder (14)/cake2.jpg" alt="Angel Cake 2">
-              <img class="slides" src="cake 4tos/New folder (14)/cake3.jpg" alt="Angel Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal16')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal16')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (14)/cake1.webp" alt="Angel Cake 1">
+              <img class="slides" src="cake 4tos/New folder (14)/cake2.webp" alt="Angel Cake 2">
+              <img class="slides" src="cake 4tos/New folder (14)/cake3.webp" alt="Angel Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal16">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal16">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Angel Theme Cake</h3>
               <p class="a">Covered with buttercream icing and styled with beautiful toppers and deco spheres.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 17 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal17')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal17">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (15)/cake4.png" alt="Romantic Round Cake">
+            <img src="cake 4tos/New folder (15)/cake4.webp" alt="Romantic Round Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Romantic Floral Cake</h3>
@@ -614,27 +617,27 @@
         </div>
         <div id="cakeModal17" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal17')">&times;</span>
+            <span class="close" data-close-modal="cakeModal17">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (15)/cake1.jpg" alt="Romantic Cake 1">
-              <img class="slides" src="cake 4tos/New folder (15)/cake2.jpg" alt="Romantic Cake 2">
-              <img class="slides" src="cake 4tos/New folder (15)/cake3.jpg" alt="Romantic Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal17')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal17')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (15)/cake1.webp" alt="Romantic Cake 1">
+              <img class="slides" src="cake 4tos/New folder (15)/cake2.webp" alt="Romantic Cake 2">
+              <img class="slides" src="cake 4tos/New folder (15)/cake3.webp" alt="Romantic Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal17">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal17">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Romantic Floral Cake</h3>
               <p class="a">Covered with smooth buttercream icing and adorned with handmade sugar flowers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 18 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal18')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal18">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (16)/cake4.png" alt="Bike Theme Cake">
+            <img src="cake 4tos/New folder (16)/cake4.webp" alt="Bike Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Custom Bike Theme Cake</h3>
@@ -643,27 +646,27 @@
         </div>
         <div id="cakeModal18" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal18')">&times;</span>
+            <span class="close" data-close-modal="cakeModal18">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (16)/cake1.jpg" alt="Bike Cake 1">
-              <img class="slides" src="cake 4tos/New folder (16)/cake2.jpg" alt="Bike Cake 2">
-              <img class="slides" src="cake 4tos/New folder (16)/cake3.jpg" alt="Bike Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal18')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal18')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (16)/cake1.webp" alt="Bike Cake 1">
+              <img class="slides" src="cake 4tos/New folder (16)/cake2.webp" alt="Bike Cake 2">
+              <img class="slides" src="cake 4tos/New folder (16)/cake3.webp" alt="Bike Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal18">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal18">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Custom Bike Theme Cake</h3>
               <p class="a">Covered with buttercream icing and styled with bike theme toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 19 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal19')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal19">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (17)/cake4.png" alt="Heart Shape Cake">
+            <img src="cake 4tos/New folder (17)/cake4.webp" alt="Heart Shape Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Heart Shape Cake</h3>
@@ -672,27 +675,27 @@
         </div>
         <div id="cakeModal19" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal19')">&times;</span>
+            <span class="close" data-close-modal="cakeModal19">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (17)/cake1.jpg" alt="Heart Cake 1">
-              <img class="slides" src="cake 4tos/New folder (17)/cake2.jpg" alt="Heart Cake 2">
-              <img class="slides" src="cake 4tos/New folder (17)/cake3.jpg" alt="Heart Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal19')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal19')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (17)/cake1.webp" alt="Heart Cake 1">
+              <img class="slides" src="cake 4tos/New folder (17)/cake2.webp" alt="Heart Cake 2">
+              <img class="slides" src="cake 4tos/New folder (17)/cake3.webp" alt="Heart Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal19">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal19">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Heart Shape Cake</h3>
               <p class="a">Decorated and covered with rich buttercream piping in romantic hues.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 20 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal20')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal20">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (18)/cake4.png" alt="Enchanted Princess Cake">
+            <img src="cake 4tos/New folder (18)/cake4.webp" alt="Enchanted Princess Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Enchanted Princess Cake</h3>
@@ -701,27 +704,27 @@
         </div>
         <div id="cakeModal20" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal20')">&times;</span>
+            <span class="close" data-close-modal="cakeModal20">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (18)/cake1.jpg" alt="Princess Cake 1">
-              <img class="slides" src="cake 4tos/New folder (18)/cake2.jpg" alt="Princess Cake 2">
-              <img class="slides" src="cake 4tos/New folder (18)/cake3.jpg" alt="Princess Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal20')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal20')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (18)/cake1.webp" alt="Princess Cake 1">
+              <img class="slides" src="cake 4tos/New folder (18)/cake2.webp" alt="Princess Cake 2">
+              <img class="slides" src="cake 4tos/New folder (18)/cake3.webp" alt="Princess Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal20">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal20">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Enchanted Princess Cake</h3>
               <p class="a">Covered with buttercream icing and decorated with beautiful princess toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 21 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal21')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal21">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (19)/cake4.png" alt="Luxury Drip Cake">
+            <img src="cake 4tos/New folder (19)/cake4.webp" alt="Luxury Drip Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Luxury Drip Cake</h3>
@@ -730,27 +733,27 @@
         </div>
         <div id="cakeModal21" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal21')">&times;</span>
+            <span class="close" data-close-modal="cakeModal21">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (19)/cake1.jpg" alt="Luxury Drip 1">
-              <img class="slides" src="cake 4tos/New folder (19)/cake2.jpg" alt="Luxury Drip 2">
-              <img class="slides" src="cake 4tos/New folder (19)/cake3.jpg" alt="Luxury Drip 3">
-              <button class="prev" onclick="prevImage('cakeModal21')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal21')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (19)/cake1.webp" alt="Luxury Drip 1">
+              <img class="slides" src="cake 4tos/New folder (19)/cake2.webp" alt="Luxury Drip 2">
+              <img class="slides" src="cake 4tos/New folder (19)/cake3.webp" alt="Luxury Drip 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal21">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal21">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Luxury Drip Cake</h3>
               <p class="a">Covered with smooth buttercream icing with chocolate drip detailing on one side.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 22 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal22')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal22">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (20)/cake4.png" alt="Minnie Mouse Cake">
+            <img src="cake 4tos/New folder (20)/cake4.webp" alt="Minnie Mouse Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Minnie Mouse Theme Cake</h3>
@@ -759,27 +762,27 @@
         </div>
         <div id="cakeModal22" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal22')">&times;</span>
+            <span class="close" data-close-modal="cakeModal22">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (20)/cake1.jpg" alt="Minnie Mouse 1">
-              <img class="slides" src="cake 4tos/New folder (20)/cake2.jpg" alt="Minnie Mouse 2">
-              <img class="slides" src="cake 4tos/New folder (20)/cake3.jpg" alt="Minnie Mouse 3">
-              <button class="prev" onclick="prevImage('cakeModal22')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal22')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (20)/cake1.webp" alt="Minnie Mouse 1">
+              <img class="slides" src="cake 4tos/New folder (20)/cake2.webp" alt="Minnie Mouse 2">
+              <img class="slides" src="cake 4tos/New folder (20)/cake3.webp" alt="Minnie Mouse 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal22">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal22">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Minnie Mouse Theme Cake</h3>
               <p class="a">Covered with buttercream icing and styled with handcrafted toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 23 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal23')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal23">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (21)/cake4.png" alt="Chocolate Overload Cake">
+            <img src="cake 4tos/New folder (21)/cake4.webp" alt="Chocolate Overload Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Chocolate Overload Cake</h3>
@@ -788,27 +791,27 @@
         </div>
         <div id="cakeModal23" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal23')">&times;</span>
+            <span class="close" data-close-modal="cakeModal23">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (21)/cake1.jpg" alt="Chocolate Overload 1">
-              <img class="slides" src="cake 4tos/New folder (21)/cake2.jpg" alt="Chocolate Overload 2">
-              <img class="slides" src="cake 4tos/New folder (21)/cake3.jpg" alt="Chocolate Overload 3">
-              <button class="prev" onclick="prevImage('cakeModal23')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal23')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (21)/cake1.webp" alt="Chocolate Overload 1">
+              <img class="slides" src="cake 4tos/New folder (21)/cake2.webp" alt="Chocolate Overload 2">
+              <img class="slides" src="cake 4tos/New folder (21)/cake3.webp" alt="Chocolate Overload 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal23">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal23">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Chocolate Overload Cake</h3>
               <p class="a">Covered with buttercream icing and chocolate sprinkles, crowned with chocolate iced cupcakes.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 24 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal24')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal24">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (22)/cake4.png" alt="Angel Theme Cake">
+            <img src="cake 4tos/New folder (22)/cake4.webp" alt="Angel Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Cute Angel Theme Cake</h3>
@@ -817,27 +820,27 @@
         </div>
         <div id="cakeModal24" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal24')">&times;</span>
+            <span class="close" data-close-modal="cakeModal24">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (22)/cake1.jpg" alt="Angel Theme 1">
-              <img class="slides" src="cake 4tos/New folder (22)/cake2.jpg" alt="Angel Theme 2">
-              <img class="slides" src="cake 4tos/New folder (22)/cake3.jpg" alt="Angel Theme 3">
-              <button class="prev" onclick="prevImage('cakeModal24')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal24')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (22)/cake1.webp" alt="Angel Theme 1">
+              <img class="slides" src="cake 4tos/New folder (22)/cake2.webp" alt="Angel Theme 2">
+              <img class="slides" src="cake 4tos/New folder (22)/cake3.webp" alt="Angel Theme 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal24">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal24">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Cute Angel Theme Cake</h3>
               <p class="a">Covered with buttercream icing and decorated with cute angel toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 25 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal25')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal25">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (23)/cake4.png" alt="Car Theme Cake">
+            <img src="cake 4tos/New folder (23)/cake4.webp" alt="Car Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Car Theme Cake</h3>
@@ -846,27 +849,27 @@
         </div>
         <div id="cakeModal25" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal25')">&times;</span>
+            <span class="close" data-close-modal="cakeModal25">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (23)/cake1.jpg" alt="Car Cake 1">
-              <img class="slides" src="cake 4tos/New folder (23)/cake2.jpg" alt="Car Cake 2">
-              <img class="slides" src="cake 4tos/New folder (23)/cake3.jpg" alt="Car Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal25')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal25')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (23)/cake1.webp" alt="Car Cake 1">
+              <img class="slides" src="cake 4tos/New folder (23)/cake2.webp" alt="Car Cake 2">
+              <img class="slides" src="cake 4tos/New folder (23)/cake3.webp" alt="Car Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal25">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal25">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Car Theme Cake</h3>
               <p class="a">Covered with buttercream icing and chocolate drip, featuring custom car toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 26 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal26')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal26">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (24)/cake4.png" alt="Square Shape Cake">
+            <img src="cake 4tos/New folder (24)/cake4.webp" alt="Square Shape Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Square Shape Birthday Cake</h3>
@@ -875,27 +878,27 @@
         </div>
         <div id="cakeModal26" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal26')">&times;</span>
+            <span class="close" data-close-modal="cakeModal26">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (24)/cake1.jpg" alt="Square Cake 1">
-              <img class="slides" src="cake 4tos/New folder (24)/cake2.jpg" alt="Square Cake 2">
-              <img class="slides" src="cake 4tos/New folder (24)/cake3.jpg" alt="Square Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal26')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal26')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (24)/cake1.webp" alt="Square Cake 1">
+              <img class="slides" src="cake 4tos/New folder (24)/cake2.webp" alt="Square Cake 2">
+              <img class="slides" src="cake 4tos/New folder (24)/cake3.webp" alt="Square Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal26">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal26">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Square Shape Birthday Cake</h3>
               <p class="a">Neatly covered and decorated with fresh buttercream icing.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 27 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal27')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal27">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (25)/cake4.png" alt="Spider-Man Hero Cake">
+            <img src="cake 4tos/New folder (25)/cake4.webp" alt="Spider-Man Hero Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Spider-Man Hero Cake</h3>
@@ -904,27 +907,27 @@
         </div>
         <div id="cakeModal27" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal27')">&times;</span>
+            <span class="close" data-close-modal="cakeModal27">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (25)/cake1.jpg" alt="Spider-Man Hero 1">
-              <img class="slides" src="cake 4tos/New folder (25)/cake2.jpg" alt="Spider-Man Hero 2">
-              <img class="slides" src="cake 4tos/New folder (25)/cake3.jpg" alt="Spider-Man Hero 3">
-              <button class="prev" onclick="prevImage('cakeModal27')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal27')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (25)/cake1.webp" alt="Spider-Man Hero 1">
+              <img class="slides" src="cake 4tos/New folder (25)/cake2.webp" alt="Spider-Man Hero 2">
+              <img class="slides" src="cake 4tos/New folder (25)/cake3.webp" alt="Spider-Man Hero 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal27">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal27">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Spider-Man Hero Cake</h3>
               <p class="a">Covered with red and blue buttercream icing with Spider-Man web decorations.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 28 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal28')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal28">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (26)/cake4.png" alt="Vanilla Butter Cake">
+            <img src="cake 4tos/New folder (26)/cake4.webp" alt="Vanilla Butter Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Vanilla Buttercream Round Cake</h3>
@@ -933,27 +936,27 @@
         </div>
         <div id="cakeModal28" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal28')">&times;</span>
+            <span class="close" data-close-modal="cakeModal28">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (26)/cake1.jpg" alt="Vanilla Butter 1">
-              <img class="slides" src="cake 4tos/New folder (26)/cake2.jpg" alt="Vanilla Butter 2">
-              <img class="slides" src="cake 4tos/New folder (26)/cake3.jpg" alt="Vanilla Butter 3">
-              <button class="prev" onclick="prevImage('cakeModal28')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal28')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (26)/cake1.webp" alt="Vanilla Butter 1">
+              <img class="slides" src="cake 4tos/New folder (26)/cake2.webp" alt="Vanilla Butter 2">
+              <img class="slides" src="cake 4tos/New folder (26)/cake3.webp" alt="Vanilla Butter 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal28">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal28">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Vanilla Buttercream Round Cake</h3>
               <p class="a">Vanilla flavored butter cake covered and decorated with smooth buttercream.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 29 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal29')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal29">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (27)/cake3.png" alt="Drizzle Cake">
+            <img src="cake 4tos/New folder (27)/cake3.webp" alt="Drizzle Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Drizzle Chocolate Birthday Cake</h3>
@@ -962,26 +965,26 @@
         </div>
         <div id="cakeModal29" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal29')">&times;</span>
+            <span class="close" data-close-modal="cakeModal29">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (27)/cake1.jpg" alt="Drizzle Cake 1">
-              <img class="slides" src="cake 4tos/New folder (27)/cake2.jpg" alt="Drizzle Cake 2">
-              <button class="prev" onclick="prevImage('cakeModal29')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal29')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (27)/cake1.webp" alt="Drizzle Cake 1">
+              <img class="slides" src="cake 4tos/New folder (27)/cake2.webp" alt="Drizzle Cake 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal29">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal29">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Drizzle Chocolate Birthday Cake</h3>
               <p class="a">Vanilla flavored butter cake covered with buttercream and chocolate drip.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 30 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal30')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal30">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (28)/cake4.png" alt="Racing Bike Cake">
+            <img src="cake 4tos/New folder (28)/cake4.webp" alt="Racing Bike Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Racing Bike Theme Cake</h3>
@@ -990,27 +993,27 @@
         </div>
         <div id="cakeModal30" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal30')">&times;</span>
+            <span class="close" data-close-modal="cakeModal30">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (28)/cake1.jpg" alt="Racing Bike 1">
-              <img class="slides" src="cake 4tos/New folder (28)/cake2.jpg" alt="Racing Bike 2">
-              <img class="slides" src="cake 4tos/New folder (28)/cake3.jpg" alt="Racing Bike 3">
-              <button class="prev" onclick="prevImage('cakeModal30')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal30')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (28)/cake1.webp" alt="Racing Bike 1">
+              <img class="slides" src="cake 4tos/New folder (28)/cake2.webp" alt="Racing Bike 2">
+              <img class="slides" src="cake 4tos/New folder (28)/cake3.webp" alt="Racing Bike 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal30">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal30">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Racing Bike Theme Cake</h3>
               <p class="a">Covered with buttercream icing and decorated with a miniature racing bike model on top.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 31 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal31')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal31">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (29)/cake4.png" alt="Rapunzel Theme Cake">
+            <img src="cake 4tos/New folder (29)/cake4.webp" alt="Rapunzel Theme Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Rapunzel Princess Cake</h3>
@@ -1019,27 +1022,27 @@
         </div>
         <div id="cakeModal31" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal31')">&times;</span>
+            <span class="close" data-close-modal="cakeModal31">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (29)/cake1.jpg" alt="Rapunzel Cake 1">
-              <img class="slides" src="cake 4tos/New folder (29)/cake2.jpg" alt="Rapunzel Cake 2">
-              <img class="slides" src="cake 4tos/New folder (29)/cake3.jpg" alt="Rapunzel Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal31')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal31')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (29)/cake1.webp" alt="Rapunzel Cake 1">
+              <img class="slides" src="cake 4tos/New folder (29)/cake2.webp" alt="Rapunzel Cake 2">
+              <img class="slides" src="cake 4tos/New folder (29)/cake3.webp" alt="Rapunzel Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal31">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal31">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Rapunzel Princess Cake</h3>
               <p class="a">Round butter cake covered with buttercream icing and Rapunzel character toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 32 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal32')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal32">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (30)/cake4.png" alt="Floral Pearl Cake">
+            <img src="cake 4tos/New folder (30)/cake4.webp" alt="Floral Pearl Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Floral Pearl Round Cake</h3>
@@ -1048,27 +1051,27 @@
         </div>
         <div id="cakeModal32" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal32')">&times;</span>
+            <span class="close" data-close-modal="cakeModal32">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (30)/cake1.jpg" alt="Floral Pearl 1">
-              <img class="slides" src="cake 4tos/New folder (30)/cake2.jpg" alt="Floral Pearl 2">
-              <img class="slides" src="cake 4tos/New folder (30)/cake3.jpg" alt="Floral Pearl 3">
-              <button class="prev" onclick="prevImage('cakeModal32')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal32')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (30)/cake1.webp" alt="Floral Pearl 1">
+              <img class="slides" src="cake 4tos/New folder (30)/cake2.webp" alt="Floral Pearl 2">
+              <img class="slides" src="cake 4tos/New folder (30)/cake3.webp" alt="Floral Pearl 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal32">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal32">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Floral Pearl Round Cake</h3>
               <p class="a">Vanilla cake covered with buttercream icing, decorated with sugar pearls and fondant flowers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 33 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal33')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal33">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (31)/cake4.png" alt="Speed Car Cake">
+            <img src="cake 4tos/New folder (31)/cake4.webp" alt="Speed Car Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Speed Car Theme Cake</h3>
@@ -1077,27 +1080,27 @@
         </div>
         <div id="cakeModal33" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal33')">&times;</span>
+            <span class="close" data-close-modal="cakeModal33">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (31)/cake1.jpg" alt="Speed Car 1">
-              <img class="slides" src="cake 4tos/New folder (31)/cake2.jpg" alt="Speed Car 2">
-              <img class="slides" src="cake 4tos/New folder (31)/cake3.jpg" alt="Speed Car 3">
-              <button class="prev" onclick="prevImage('cakeModal33')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal33')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (31)/cake1.webp" alt="Speed Car 1">
+              <img class="slides" src="cake 4tos/New folder (31)/cake2.webp" alt="Speed Car 2">
+              <img class="slides" src="cake 4tos/New folder (31)/cake3.webp" alt="Speed Car 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal33">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal33">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Speed Car Theme Cake</h3>
               <p class="a">Round butter cake decorated with buttercream icing and custom car toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 34 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal34')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal34">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (32)/cake4.png" alt="Royal Princess Cake">
+            <img src="cake 4tos/New folder (32)/cake4.webp" alt="Royal Princess Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Royal Princess Cake</h3>
@@ -1106,27 +1109,27 @@
         </div>
         <div id="cakeModal34" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal34')">&times;</span>
+            <span class="close" data-close-modal="cakeModal34">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (32)/cake1.jpg" alt="Royal Princess 1">
-              <img class="slides" src="cake 4tos/New folder (32)/cake2.jpg" alt="Royal Princess 2">
-              <img class="slides" src="cake 4tos/New folder (32)/cake3.jpg" alt="Royal Princess 3">
-              <button class="prev" onclick="prevImage('cakeModal34')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal34')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (32)/cake1.webp" alt="Royal Princess 1">
+              <img class="slides" src="cake 4tos/New folder (32)/cake2.webp" alt="Royal Princess 2">
+              <img class="slides" src="cake 4tos/New folder (32)/cake3.webp" alt="Royal Princess 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal34">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal34">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Royal Princess Cake</h3>
               <p class="a">Round butter cake decorated with smooth buttercream and princess toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 35 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal35')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal35">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (33)/cake4.png" alt="Chocolate Icing Cake">
+            <img src="cake 4tos/New folder (33)/cake4.webp" alt="Chocolate Icing Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Chocolate Icing Deluxe Cake</h3>
@@ -1135,26 +1138,26 @@
         </div>
         <div id="cakeModal35" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal35')">&times;</span>
+            <span class="close" data-close-modal="cakeModal35">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (33)/cake1.jpg" alt="Chocolate Deluxe 1">
-              <img class="slides" src="cake 4tos/New folder (33)/cake3.jpg" alt="Chocolate Deluxe 2">
-              <button class="prev" onclick="prevImage('cakeModal35')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal35')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (33)/cake1.webp" alt="Chocolate Deluxe 1">
+              <img class="slides" src="cake 4tos/New folder (33)/cake3.webp" alt="Chocolate Deluxe 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal35">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal35">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Chocolate Icing Deluxe Cake</h3>
               <p class="a">Rich round cake covered in chocolate buttercream and decorated with matching iced cupcakes.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 36 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal36')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal36">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (34)/cake3.png" alt="Sport Bike Cake">
+            <img src="cake 4tos/New folder (34)/cake3.webp" alt="Sport Bike Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Sport Bike Theme Cake</h3>
@@ -1163,26 +1166,26 @@
         </div>
         <div id="cakeModal36" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal36')">&times;</span>
+            <span class="close" data-close-modal="cakeModal36">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (34)/cake1.jpg" alt="Sport Bike 1">
-              <img class="slides" src="cake 4tos/New folder (34)/cake2.jpg" alt="Sport Bike 2">
-              <button class="prev" onclick="prevImage('cakeModal36')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal36')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (34)/cake1.webp" alt="Sport Bike 1">
+              <img class="slides" src="cake 4tos/New folder (34)/cake2.webp" alt="Sport Bike 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal36">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal36">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Sport Bike Theme Cake</h3>
               <p class="a">Rich chocolate cake covered with buttercream icing and topped with a motorcycle model.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 37 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal37')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal37">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (35)/cake3.png" alt="Romantic Chocolate Cake">
+            <img src="cake 4tos/New folder (35)/cake3.webp" alt="Romantic Chocolate Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Romantic Chocolate Delight</h3>
@@ -1191,26 +1194,26 @@
         </div>
         <div id="cakeModal37" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal37')">&times;</span>
+            <span class="close" data-close-modal="cakeModal37">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (35)/cake1.jpg" alt="Chocolate Delight 1">
-              <img class="slides" src="cake 4tos/New folder (35)/cake2.jpg" alt="Chocolate Delight 2">
-              <button class="prev" onclick="prevImage('cakeModal37')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal37')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (35)/cake1.webp" alt="Chocolate Delight 1">
+              <img class="slides" src="cake 4tos/New folder (35)/cake2.webp" alt="Chocolate Delight 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal37">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal37">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Romantic Chocolate Delight</h3>
               <p class="a">Chocolate sponge cake layered with chocolate icing and crowned with matching mini cupcakes.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 38 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal38')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal38">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (38)/cake4.png" alt="Pink Doll Cake">
+            <img src="cake 4tos/New folder (38)/cake4.webp" alt="Pink Doll Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Pink Doll Cake</h3>
@@ -1219,27 +1222,27 @@
         </div>
         <div id="cakeModal38" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal38')">&times;</span>
+            <span class="close" data-close-modal="cakeModal38">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (38)/cake1.jpg" alt="Pink Doll 1">
-              <img class="slides" src="cake 4tos/New folder (38)/cake2.jpg" alt="Pink Doll 2">
-              <img class="slides" src="cake 4tos/New folder (38)/cake3.jpg" alt="Pink Doll 3">
-              <button class="prev" onclick="prevImage('cakeModal38')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal38')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (38)/cake1.webp" alt="Pink Doll 1">
+              <img class="slides" src="cake 4tos/New folder (38)/cake2.webp" alt="Pink Doll 2">
+              <img class="slides" src="cake 4tos/New folder (38)/cake3.webp" alt="Pink Doll 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal38">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal38">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Pink Doll Cake</h3>
               <p class="a">Soft butter cake covered and intricately decorated with handmade fondant icing.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 39 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal39')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal39">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (39)/cake4.png" alt="Vanilla Celebration Cake">
+            <img src="cake 4tos/New folder (39)/cake4.webp" alt="Vanilla Celebration Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Classic Vanilla Celebration Cake</h3>
@@ -1248,27 +1251,27 @@
         </div>
         <div id="cakeModal39" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal39')">&times;</span>
+            <span class="close" data-close-modal="cakeModal39">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (39)/cake1.jpg" alt="Vanilla Celebration 1">
-              <img class="slides" src="cake 4tos/New folder (39)/cake2.jpg" alt="Vanilla Celebration 2">
-              <img class="slides" src="cake 4tos/New folder (39)/cake3.jpg" alt="Vanilla Celebration 3">
-              <button class="prev" onclick="prevImage('cakeModal39')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal39')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (39)/cake1.webp" alt="Vanilla Celebration 1">
+              <img class="slides" src="cake 4tos/New folder (39)/cake2.webp" alt="Vanilla Celebration 2">
+              <img class="slides" src="cake 4tos/New folder (39)/cake3.webp" alt="Vanilla Celebration 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal39">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal39">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Classic Vanilla Celebration Cake</h3>
               <p class="a">Vanilla cake covered with fluffy buttercream icing for any special occasion.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 40 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal40')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal40">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (40)/cake3.png" alt="Bear Cake">
+            <img src="cake 4tos/New folder (40)/cake3.webp" alt="Bear Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Cute Bear Theme Cake</h3>
@@ -1277,26 +1280,26 @@
         </div>
         <div id="cakeModal40" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal40')">&times;</span>
+            <span class="close" data-close-modal="cakeModal40">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (40)/cake1.jpg" alt="Bear Cake 1">
-              <img class="slides" src="cake 4tos/New folder (40)/cake2.jpg" alt="Bear Cake 2">
-              <button class="prev" onclick="prevImage('cakeModal40')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal40')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (40)/cake1.webp" alt="Bear Cake 1">
+              <img class="slides" src="cake 4tos/New folder (40)/cake2.webp" alt="Bear Cake 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal40">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal40">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Cute Bear Theme Cake</h3>
               <p class="a">Chocolate cake covered with buttercream icing and decorated with a cute fondant bear on top.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 41 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal41')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal41">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (41)/cake4.png" alt="Rainbow Unicorn Cake">
+            <img src="cake 4tos/New folder (41)/cake4.webp" alt="Rainbow Unicorn Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Rainbow Unicorn Cake</h3>
@@ -1305,27 +1308,27 @@
         </div>
         <div id="cakeModal41" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal41')">&times;</span>
+            <span class="close" data-close-modal="cakeModal41">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (41)/cake1.jpg" alt="Rainbow Unicorn 1">
-              <img class="slides" src="cake 4tos/New folder (41)/cake2.jpg" alt="Rainbow Unicorn 2">
-              <img class="slides" src="cake 4tos/New folder (41)/cake3.jpg" alt="Rainbow Unicorn 3">
-              <button class="prev" onclick="prevImage('cakeModal41')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal41')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (41)/cake1.webp" alt="Rainbow Unicorn 1">
+              <img class="slides" src="cake 4tos/New folder (41)/cake2.webp" alt="Rainbow Unicorn 2">
+              <img class="slides" src="cake 4tos/New folder (41)/cake3.webp" alt="Rainbow Unicorn 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal41">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal41">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Rainbow Unicorn Cake</h3>
               <p class="a">Round butter cake covered in buttercream icing with colorful unicorn toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 42 -->
-        <div class="menu-item" data-category="theme" onclick="openModal('cakeModal42')">
+        <div class="menu-item" data-category="theme" data-modal="cakeModal42">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (42)/cake3.png" alt="Spider-Man Action Cake">
+            <img src="cake 4tos/New folder (42)/cake3.webp" alt="Spider-Man Action Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Spider-Man Action Cake</h3>
@@ -1334,26 +1337,26 @@
         </div>
         <div id="cakeModal42" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal42')">&times;</span>
+            <span class="close" data-close-modal="cakeModal42">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (42)/cake1.jpg" alt="Spider-Man Action 1">
-              <img class="slides" src="cake 4tos/New folder (42)/cake2.jpg" alt="Spider-Man Action 2">
-              <button class="prev" onclick="prevImage('cakeModal42')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal42')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (42)/cake1.webp" alt="Spider-Man Action 1">
+              <img class="slides" src="cake 4tos/New folder (42)/cake2.webp" alt="Spider-Man Action 2">
+              <button class="prev" data-slide="prev" data-modal="cakeModal42">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal42">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Spider-Man Action Cake</h3>
               <p class="a">Round butter cake decorated with buttercream icing and a Spider-Man toy figure on top.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 43 -->
-        <div class="menu-item" data-category="floral" onclick="openModal('cakeModal43')">
+        <div class="menu-item" data-category="floral" data-modal="cakeModal43">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (43)/cake5.png" alt="Heart Shape Love Cake">
+            <img src="cake 4tos/New folder (43)/cake5.webp" alt="Heart Shape Love Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Heart Shape Love Cake</h3>
@@ -1362,28 +1365,28 @@
         </div>
         <div id="cakeModal43" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal43')">&times;</span>
+            <span class="close" data-close-modal="cakeModal43">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (43)/cake1.jpg" alt="Heart Love 1">
-              <img class="slides" src="cake 4tos/New folder (43)/cake2.jpg" alt="Heart Love 2">
-              <img class="slides" src="cake 4tos/New folder (43)/cake3.jpg" alt="Heart Love 3">
-              <img class="slides" src="cake 4tos/New folder (43)/cake4.jpg" alt="Heart Love 4">
-              <button class="prev" onclick="prevImage('cakeModal43')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal43')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (43)/cake1.webp" alt="Heart Love 1">
+              <img class="slides" src="cake 4tos/New folder (43)/cake2.webp" alt="Heart Love 2">
+              <img class="slides" src="cake 4tos/New folder (43)/cake3.webp" alt="Heart Love 3">
+              <img class="slides" src="cake 4tos/New folder (43)/cake4.webp" alt="Heart Love 4">
+              <button class="prev" data-slide="prev" data-modal="cakeModal43">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal43">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Heart Shape Love Cake</h3>
               <p class="a">Heart shape butter cake covered with buttercream icing and fondant detailing.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 44 -->
-        <div class="menu-item" data-category="birthday" onclick="openModal('cakeModal44')">
+        <div class="menu-item" data-category="birthday" data-modal="cakeModal44">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (44)/cake4.png" alt="Colorful Celebration Cake">
+            <img src="cake 4tos/New folder (44)/cake4.webp" alt="Colorful Celebration Cake">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Colorful Celebration Cake</h3>
@@ -1392,27 +1395,27 @@
         </div>
         <div id="cakeModal44" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal44')">&times;</span>
+            <span class="close" data-close-modal="cakeModal44">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (44)/cake1.jpg" alt="Colorful Celebration 1">
-              <img class="slides" src="cake 4tos/New folder (44)/cake2.jpg" alt="Colorful Celebration 2">
-              <img class="slides" src="cake 4tos/New folder (44)/cake3.jpg" alt="Colorful Celebration 3">
-              <button class="prev" onclick="prevImage('cakeModal44')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal44')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (44)/cake1.webp" alt="Colorful Celebration 1">
+              <img class="slides" src="cake 4tos/New folder (44)/cake2.webp" alt="Colorful Celebration 2">
+              <img class="slides" src="cake 4tos/New folder (44)/cake3.webp" alt="Colorful Celebration 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal44">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal44">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Colorful Celebration Cake</h3>
               <p class="a">Butter cake covered in smooth icing and decorated with colorful fondant cutouts.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 45 -->
-        <div class="menu-item" data-category="speciality" onclick="openModal('cakeModal45')">
+        <div class="menu-item" data-category="speciality" data-modal="cakeModal45">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (49)/cake6.png" alt="Custom Butter & Chocolate Cakes">
+            <img src="cake 4tos/New folder (49)/cake6.webp" alt="Custom Butter & Chocolate Cakes">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Custom Butter & Chocolate Cakes</h3>
@@ -1421,29 +1424,29 @@
         </div>
         <div id="cakeModal45" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal45')">&times;</span>
+            <span class="close" data-close-modal="cakeModal45">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (49)/cake1.jpg" alt="Custom Cakes 1">
-              <img class="slides" src="cake 4tos/New folder (49)/cake2.jpg" alt="Custom Cakes 2">
-              <img class="slides" src="cake 4tos/New folder (49)/cake3.jpg" alt="Custom Cakes 3">
-              <img class="slides" src="cake 4tos/New folder (49)/cake4.jpg" alt="Custom Cakes 4">
-              <img class="slides" src="cake 4tos/New folder (49)/cake5.jpg" alt="Custom Cakes 5">
-              <button class="prev" onclick="prevImage('cakeModal45')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal45')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (49)/cake1.webp" alt="Custom Cakes 1">
+              <img class="slides" src="cake 4tos/New folder (49)/cake2.webp" alt="Custom Cakes 2">
+              <img class="slides" src="cake 4tos/New folder (49)/cake3.webp" alt="Custom Cakes 3">
+              <img class="slides" src="cake 4tos/New folder (49)/cake4.webp" alt="Custom Cakes 4">
+              <img class="slides" src="cake 4tos/New folder (49)/cake5.webp" alt="Custom Cakes 5">
+              <button class="prev" data-slide="prev" data-modal="cakeModal45">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal45">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Custom Butter & Chocolate Cakes</h3>
               <p class="a">All kinds of butter, chocolate, and ribbon cakes available to customize according to your flavor preferences.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 46 -->
-        <div class="menu-item" data-category="speciality" onclick="openModal('cakeModal46')">
+        <div class="menu-item" data-category="speciality" data-modal="cakeModal46">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (50)/cake2.png" alt="Custom Cupcakes">
+            <img src="cake 4tos/New folder (50)/cake2.webp" alt="Custom Cupcakes">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Custom Cupcakes</h3>
@@ -1452,25 +1455,25 @@
         </div>
         <div id="cakeModal46" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal46')">&times;</span>
+            <span class="close" data-close-modal="cakeModal46">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (50)/cake1.jpg" alt="Custom Cupcakes 1">
-              <button class="prev" onclick="prevImage('cakeModal46')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal46')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (50)/cake1.webp" alt="Custom Cupcakes 1">
+              <button class="prev" data-slide="prev" data-modal="cakeModal46">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal46">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Custom Cupcakes</h3>
               <p class="a">Freshly baked cupcakes available in butter, chocolate, and ribbon flavors with customized icing toppers.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
 
         <!-- Cake 47 -->
-        <div class="menu-item" data-category="speciality" onclick="openModal('cakeModal47')">
+        <div class="menu-item" data-category="speciality" data-modal="cakeModal47">
           <div class="menu-item-img-wrap">
-            <img src="cake 4tos/New folder (51)/cake4.png" alt="Pot Cakes">
+            <img src="cake 4tos/New folder (51)/cake4.webp" alt="Pot Cakes">
             <span class="view-badge">View Gallery</span>
           </div>
           <h3>Delicious Pot Cakes</h3>
@@ -1479,19 +1482,19 @@
         </div>
         <div id="cakeModal47" class="modal">
           <div class="modal-content">
-            <span class="close" onclick="closeModal('cakeModal47')">&times;</span>
+            <span class="close" data-close-modal="cakeModal47">&times;</span>
             <div class="slider-wrapper">
-              <img class="slides" src="cake 4tos/New folder (51)/cake1.jpg" alt="Pot Cake 1">
-              <img class="slides" src="cake 4tos/New folder (51)/cake2.jpg" alt="Pot Cake 2">
-              <img class="slides" src="cake 4tos/New folder (51)/cake3.jpg" alt="Pot Cake 3">
-              <button class="prev" onclick="prevImage('cakeModal47')">&#10094;</button>
-              <button class="next" onclick="nextImage('cakeModal47')">&#10095;</button>
+              <img class="slides" src="cake 4tos/New folder (51)/cake1.webp" alt="Pot Cake 1">
+              <img class="slides" src="cake 4tos/New folder (51)/cake2.webp" alt="Pot Cake 2">
+              <img class="slides" src="cake 4tos/New folder (51)/cake3.webp" alt="Pot Cake 3">
+              <button class="prev" data-slide="prev" data-modal="cakeModal47">&#10094;</button>
+              <button class="next" data-slide="next" data-modal="cakeModal47">&#10095;</button>
             </div>
             <div class="modal-text">
               <h3>Delicious Pot Cakes</h3>
               <p class="a">Scrumptious dessert pot cakes with customizable flavors and creamy layered toppings.</p>
               <div class="delivery-info">🚚 Delivery available (Additional cost may apply)</div>
-              <button class="btn-whatsapp" onclick="whatsApp(this)">💬 Inquire on WhatsApp</button>
+              <button class="btn-whatsapp" data-action="whatsapp">💬 Inquire on WhatsApp</button>
             </div>
           </div>
         </div>
@@ -1523,7 +1526,7 @@
           </div>
         </div>
 
-        <a href="https://wa.me/94741421929?text=Hi%20Sethu%20Cakes,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px;">
+        <a href="https://wa.me/94741421929?text=Hi%20Sethu%20Cakes,%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="btn-primary">
           💬 Chat on WhatsApp to Order
         </a>
       </div>
